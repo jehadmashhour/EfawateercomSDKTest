@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.huawei.agconnect'
 apply from: '../xmsadapter/scripts/productFlavor.gradle'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.jehadmashhour'
 
 android {
     compileSdkVersion 30
