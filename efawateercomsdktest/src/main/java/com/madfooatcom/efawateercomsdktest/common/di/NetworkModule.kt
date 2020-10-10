@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.madfooatcom.test.common.di
+package com.madfooatcom.efawateercomsdktest.common.di
 
 //import com.skydoves.disneymotions.network.DisneyService
 //import com.skydoves.disneymotions.network.RequestInterceptor

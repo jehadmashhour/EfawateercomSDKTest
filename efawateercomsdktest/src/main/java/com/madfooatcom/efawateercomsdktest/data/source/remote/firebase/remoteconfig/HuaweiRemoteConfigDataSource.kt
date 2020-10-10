@@ -1,4 +1,4 @@
-package com.madfooatcom.test.features.data.source.remote.firebase.remoteconfig
+package com.madfooatcom.efawateercomsdktest.data.source.remote.firebase.remoteconfig
 
 import com.huawei.agconnect.remoteconfig.AGConnectConfig
 

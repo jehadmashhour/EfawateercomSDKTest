@@ -1,4 +1,4 @@
-package com.madfooatcom.test.features.domain.repository
+package com.madfooatcom.efawateercomsdktest.domain.repository
 
 import com.google.android.gms.tasks.Task
 

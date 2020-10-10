@@ -1,4 +1,4 @@
-package com.madfooatcom.test.common.di
+package com.madfooatcom.efawateercomsdktest.common.di
 
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig

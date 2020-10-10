@@ -1,8 +1,8 @@
-package com.madfooatcom.test.features.data.repository
+package com.madfooatcom.efawateercomsdktest.data.repository
 
 import com.google.android.gms.tasks.Task
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import com.madfooatcom.test.features.domain.repository.FirebaseRemoteConfigRepository
+import com.madfooatcom.efawateercomsdktest.domain.repository.FirebaseRemoteConfigRepository
 
 class RemoteConfigRepositoryImpl(private val firebaseRemoteConfig: FirebaseRemoteConfig) :
     FirebaseRemoteConfigRepository {
