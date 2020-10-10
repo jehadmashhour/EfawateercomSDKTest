@@ -1,7 +1,7 @@
 package com.madfooatcom.efawateercomsdktest.data.source.remote.firebase.remoteconfig
 
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import org.xms.f.remoteconfig.ExtensionRemoteConfig
 
-class FirebaseRemoteConfigDataSource(private val firebaseRemoteConfig: FirebaseRemoteConfig) {
+class FirebaseRemoteConfigDataSource(private val firebaseRemoteConfig: ExtensionRemoteConfig) {
 
 }

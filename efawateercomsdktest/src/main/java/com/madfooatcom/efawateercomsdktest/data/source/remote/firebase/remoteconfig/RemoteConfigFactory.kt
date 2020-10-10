@@ -1,12 +1,12 @@
 package com.madfooatcom.efawateercomsdktest.data.source.remote.firebase.remoteconfig
 
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import org.xms.f.remoteconfig.ExtensionRemoteConfig
 import com.huawei.agconnect.remoteconfig.AGConnectConfig
 import com.madfooatcom.efawateercomsdktest.common.extensions.BaseRemoteConfig
 import com.madfooatcom.efawateercomsdktest.common.extensions.baseRemoteConfig
 
 class RemoteConfigFactory(
-    private val firebaseRemoteConfig: FirebaseRemoteConfig,
+    private val firebaseRemoteConfig: ExtensionRemoteConfig,
     private val agConnectConfig: AGConnectConfig
 ) {
 

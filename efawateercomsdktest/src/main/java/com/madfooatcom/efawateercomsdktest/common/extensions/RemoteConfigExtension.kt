@@ -1,7 +1,7 @@
 package com.madfooatcom.efawateercomsdktest.common.extensions
 
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import org.xms.f.remoteconfig.ExtensionRemoteConfig
 
-fun FirebaseRemoteConfig.baseRemoteConfig(): BaseRemoteConfig {
+fun ExtensionRemoteConfig.baseRemoteConfig(): BaseRemoteConfig {
     return BaseRemoteConfig()
 }
