@@ -16,12 +16,11 @@
 
 package com.madfooatcom.efawateercomsdktest.common.di
 
-//import com.skydoves.disneymotions.network.DisneyService
-//import com.skydoves.disneymotions.network.RequestInterceptor
-//import com.skydoves.sandwich.coroutines.CoroutinesResponseCallAdapterFactory
+import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 //TODO enable the comments
@@ -34,12 +33,17 @@ val networkModule = module {
     }
 
     single {
+        Gson()
+    }
+
+    single {
         Retrofit.Builder()
-            .client(get<OkHttpClient>())
+            .client(get())
             .baseUrl(
                 "https://gist.githubusercontent.com/skydoves/aa3bbbf495b0fa91db8a9e89f34e4873/raw/a1a13d37027e8920412da5f00f6a89c5a3dbfb9a/"
             )
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(get()))
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             //.addCallAdapterFactory(CoroutinesResponseCallAdapterFactory())
             .build()
     }

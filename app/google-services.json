@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "581321266811",
+    "firebase_url": "https://efawateercomsdksample.firebaseio.com",
+    "project_id": "efawateercomsdksample",
+    "storage_bucket": "efawateercomsdksample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:581321266811:android:40500c82603d351a1774de",
+        "android_client_info": {
+          "package_name": "com.madfooatcom.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "581321266811-a9e8cjf4fos7tts87mn8ohdckk926frg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.madfooatcom.test",
+            "certificate_hash": "b1ab7600836cc34d95a775ec7b8cbde3daa0ad84"
+          }
+        },
+        {
+          "client_id": "581321266811-icqfj2t25ekqh6atlccu6td8frf8833m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfBgIbD57t9iHcxHyL6aVgxdVX3QkaKUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "581321266811-icqfj2t25ekqh6atlccu6td8frf8833m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

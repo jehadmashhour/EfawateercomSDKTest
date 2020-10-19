@@ -1,9 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.huawei.agconnect'
-apply from: '../xmsadapter/scripts/productFlavor.gradle'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.jehadmashhour'
 
@@ -34,5 +31,18 @@ android {
 }
 
 dependencies {
-    api project(':xmsadapter')
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation ('androidx.test.ext:junit:1.1.2'){
+        exclude group: 'androidx.annotation'
+        exclude group: 'androidx.lifecycle'
+        exclude group: 'junit'
+
+    }
+    androidTestImplementation ('androidx.test.espresso:espresso-core:3.3.0'){
+        exclude group: 'androidx.annotation'
+        exclude group: 'com.google.code.findbugs'
+        exclude group: 'junit'
+    }
+    api project(':dependencies')
+
 }

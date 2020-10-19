@@ -2,4 +2,3 @@ include ':dependencies'
 include ':efawateercomsdktest'
 include ':app'
 rootProject.name = "EfawateercomSDK"
-include ':xmsadapter'
