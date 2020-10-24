@@ -1,4 +1,3 @@
-
 include ':efawateercomsdktest'
 include ':app'
 rootProject.name = "EfawateercomSDK"
