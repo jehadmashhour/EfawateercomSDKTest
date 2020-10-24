@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.jehadmashhour'
+group = 'com.github.jehadmashhour'
 
 
 android {
@@ -37,13 +37,13 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     testImplementation 'junit:junit:4.13'
-    androidTestImplementation ('androidx.test.ext:junit:1.1.2'){
+    androidTestImplementation('androidx.test.ext:junit:1.1.2') {
         exclude group: 'androidx.annotation'
         exclude group: 'androidx.lifecycle'
         exclude group: 'junit'
 
     }
-    androidTestImplementation ('androidx.test.espresso:espresso-core:3.3.0'){
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.3.0') {
         exclude group: 'androidx.annotation'
         exclude group: 'com.google.code.findbugs'
         exclude group: 'junit'
@@ -77,14 +77,14 @@ dependencies {
     api "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
 
     //firebase
-    implementation platform('com.google.firebase:firebase-bom:25.12.0')
-    implementation('com.google.firebase:firebase-config-ktx') {
+    api('com.google.firebase:firebase-config-ktx:19.2.0') {
         exclude group: 'androidx.collection'
         exclude group: 'androidx.core'
         exclude group: 'androidx.fragment'
         exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
     }
-    implementation 'com.google.firebase:firebase-firestore-ktx'
+
+    api 'com.google.firebase:firebase-firestore-ktx:21.7.1'
 //    api 'com.google.firebase:firebase-crashlytics-ktx'
 
     //Room
@@ -97,7 +97,6 @@ dependencies {
     //Rx
     api 'io.reactivex.rxjava2:rxandroid:2.1.1'
     api 'io.reactivex.rxjava2:rxjava:2.2.10'
-
 
 
 }
