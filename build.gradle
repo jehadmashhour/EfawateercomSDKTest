@@ -10,8 +10,8 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.koin:koin-gradle-plugin:$koin_version"
-        classpath 'com.google.gms:google-services:4.3.4'
+//
+//        classpath 'com.google.gms:google-services:4.3.4'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
 /*        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.3.0'*/
     }
@@ -25,12 +25,9 @@ allprojects {
             url "https://jitpack.io"
             credentials { username authToken }
         }
-        maven { url "https://oss.jfrog.org/libs-snapshot" }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-apply plugin: 'koin'
