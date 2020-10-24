@@ -5,7 +5,8 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.madfooatcom.efawateercomsdktest.data.entities.RemoteConfigData
-import io.reactivex.rxjava3.core.Maybe
+import io.reactivex.Maybe
+
 
 @Dao
 interface RemoteConfigDao {

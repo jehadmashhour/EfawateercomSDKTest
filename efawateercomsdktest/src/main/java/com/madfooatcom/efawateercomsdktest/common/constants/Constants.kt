@@ -1,8 +1,10 @@
 package com.madfooatcom.efawateercomsdktest.common.constants
 
+
 object FirebaseConstants {
-    const val FIREBASE_CACHE_EXPIRATION: Long = 3600
-    const val CONFIGURATION: String = "Configuration"
+    const val REMOTE_CONFIG_CACHE_EXPIRATION_KEY: String = "remote_config_cache_expiration_key"
+    const val REMOTE_CONFIG_CACHE_EXPIRATION: Long = 3600
+    const val CONFIGURATION = "configuration"
 
     object Development {
         const val projectId = "efawateercomsdktest"

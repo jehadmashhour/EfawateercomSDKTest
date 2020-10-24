@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+
 android {
     compileSdkVersion 30
     buildToolsVersion "29.0.3"
@@ -32,9 +33,18 @@ dependencies {
     api 'androidx.appcompat:appcompat:1.2.0'
     api 'androidx.constraintlayout:constraintlayout:2.0.2'
 
-    // koin
+    // Koin AndroidX Scope features
     api "org.koin:koin-androidx-scope:$koin_version"
+// Koin AndroidX ViewModel features
     api "org.koin:koin-androidx-viewmodel:$koin_version"
+// Koin AndroidX Fragment features
+    api "org.koin:koin-androidx-fragment:$koin_version"
+// Koin AndroidX WorkManager
+    api "org.koin:koin-androidx-workmanager:$koin_version"
+// Koin AndroidX Jetpack Compose
+    api "org.koin:koin-androidx-compose:$koin_version"
+// Koin AndroidX Experimental features
+    api "org.koin:koin-androidx-ext:$koin_version"
 
     //image
     api 'com.github.bumptech.glide:glide:4.11.0'
@@ -52,7 +62,8 @@ dependencies {
         exclude group: 'androidx.fragment'
         exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
     }
-    api('com.google.firebase:firebase-firestore-ktx')
+    api 'com.google.firebase:firebase-firestore-ktx'
+//    api 'com.google.firebase:firebase-crashlytics-ktx'
 
     //Room
     def room_version = "2.2.5"
@@ -62,10 +73,10 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
 
     //Rx
-    api 'io.reactivex.rxjava3:rxandroid:3.0.0'
-    api 'io.reactivex.rxjava3:rxjava:3.0.0'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'io.reactivex.rxjava2:rxjava:2.2.10'
 
-//    api 'com.google.firebase:firebase-crashlytics-ktx'
+
 
 //    api ('com.google.firebase:firebase-analytics')
 

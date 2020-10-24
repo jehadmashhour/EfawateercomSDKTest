@@ -7,6 +7,7 @@ android {
     compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
+
     defaultConfig {
         applicationId "com.madfooatcom.test"
         minSdkVersion 21
@@ -14,11 +15,24 @@ android {
         versionCode 1
         versionName "1.0"
 
+        flavorDimensions 'default'
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("D:\\MadfooatcomGit\\EfawateercomSDK\\signing\\efawateercomsdk_keystore.jks")
+            storePassword "Test@123"
+            keyAlias "efawateercomsdk_keystore"
+            keyPassword "Test@123"
+        }
+    }
+
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -26,6 +40,24 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    productFlavors {
+        development {
+            applicationIdSuffix ".development"
+        }
+
+        quality {
+            applicationIdSuffix ".quality"
+        }
+
+        sandbox {
+            applicationIdSuffix ".sandbox"
+        }
+
+        production {
+        }
     }
 }
 
