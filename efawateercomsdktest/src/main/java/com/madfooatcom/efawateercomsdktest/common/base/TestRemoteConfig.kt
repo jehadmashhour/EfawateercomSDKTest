@@ -24,26 +24,6 @@ class TestRemoteConfig {
 
             val firebaseApp: FirebaseApp =
                 FirebaseApp.initializeApp(activity /* Context */, options, "EfawateercomSDKTest")
-            val remoteConfig = Firebase.remoteConfig(firebaseApp)
-            val configSettings = remoteConfigSettings {
-                minimumFetchIntervalInSeconds = 1
-            }
-            remoteConfig.setConfigSettingsAsync(configSettings)
-            remoteConfig.fetchAndActivate()
-                .addOnCompleteListener(activity) { task ->
-                    if (task.isSuccessful) {
-                        val updated = task.result
-                        Toast.makeText(
-                            activity, remoteConfig.getString("Type"),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    } else {
-                        Toast.makeText(
-                            activity, "Fetch failed",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                }
 
             val firestore = Firebase.firestore(firebaseApp)
 

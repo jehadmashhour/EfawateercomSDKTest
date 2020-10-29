@@ -9,7 +9,11 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.madfooatcom.efawateercomsdktest.data.entities.RemoteConfigData
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_test.*
@@ -24,14 +28,47 @@ internal class TestActivity : AppCompatActivity() {
 
     private val remoteConfigData by inject<RemoteConfigData>()
 
+    private val firebaseApp by inject<FirebaseApp>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
 
         textView.text = remoteConfigData.configuration?.app?.environment?.type
-        //getKeyHash("SHA")
+
+
+
+        val firestore = Firebase.firestore(firebaseApp)
+
+        val user = hashMapOf(
+            "first" to "Ada",
+            "last" to "Lovelace",
+            "born" to 1815
+        )
+
+        firestore.collection("users")
+            .add(user)
+            .addOnSuccessListener { documentReference ->
+                Toast.makeText(
+                    this, "DocumentSnapshot added with ID: ${documentReference.id}",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(
+                    this, e.message,
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            }
 
         get(this,"SHA")
+
+    }
+        //getKeyHash("SHA")
+
+
 //        try {
 //            Log.wtf("ASSSSSSS", "qwr")
 //            if (Build.VERSION.SDK_INT >= 28) {
@@ -54,7 +91,7 @@ internal class TestActivity : AppCompatActivity() {
 //            e.printStackTrace()
 //            e.message?.let { Log.wtf("ASSSSSSS3", it) }
 //        }
-    }
+
 
 
     @SuppressLint("PackageManagerGetSignatures")
