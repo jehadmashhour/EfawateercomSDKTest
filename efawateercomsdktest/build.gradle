@@ -22,7 +22,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("D:\\MadfooatcomGit\\EfawateercomSDK\\signing\\efawateercomsdk_keystore.jks")
+            storeFile file("\\signing\\efawateercomsdk_keystore.jks")
             storePassword "Test@123"
             keyAlias "efawateercomsdk_keystore"
             keyPassword "Test@123"
@@ -37,6 +37,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
