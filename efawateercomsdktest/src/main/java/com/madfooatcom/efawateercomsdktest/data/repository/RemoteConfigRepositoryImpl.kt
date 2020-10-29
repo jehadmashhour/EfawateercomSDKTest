@@ -1,14 +1,13 @@
 package com.madfooatcom.efawateercomsdktest.data.repository
 
 
-import com.madfooatcom.efawateercomsdktest.common.constants.FirebaseConstants
 import com.madfooatcom.efawateercomsdktest.data.entities.RemoteConfigData
 import com.madfooatcom.efawateercomsdktest.data.source.remote.source.FirebaseRemoteConfigDataSourceImpl
 import com.madfooatcom.efawateercomsdktest.domain.repository.RemoteConfigRepository
 import io.reactivex.Single
 
 
-class RemoteConfigRepositoryImpl(private val firebaseRemoteConfigDataSourceImpl: FirebaseRemoteConfigDataSourceImpl) :
+internal class RemoteConfigRepositoryImpl(private val firebaseRemoteConfigDataSourceImpl: FirebaseRemoteConfigDataSourceImpl) :
     RemoteConfigRepository {
     override fun getRemoteConfigData(minimumFetchIntervalInSeconds: Long): Single<RemoteConfigData> =
         Single.create { emitter ->

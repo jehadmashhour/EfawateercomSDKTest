@@ -7,7 +7,7 @@ import com.madfooatcom.efawateercomsdktest.common.constants.FirebaseConstants
 import com.madfooatcom.efawateercomsdktest.data.entities.RemoteConfigData
 import com.madfooatcom.efawateercomsdktest.domain.source.RemoteConfigDataSource
 
-class FirebaseRemoteConfigDataSourceImpl(
+internal class FirebaseRemoteConfigDataSourceImpl(
     private val firebaseRemoteConfig: FirebaseRemoteConfig,
     private val gson: Gson
 ) : RemoteConfigDataSource {

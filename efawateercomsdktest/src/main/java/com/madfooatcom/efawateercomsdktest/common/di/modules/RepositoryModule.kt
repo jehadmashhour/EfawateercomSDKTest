@@ -6,7 +6,7 @@ import com.madfooatcom.efawateercomsdktest.domain.repository.RemoteConfigReposit
 
 import org.koin.dsl.module
 
-val repositoryModule = module {
+internal val repositoryModule = module {
     single {
         FirebaseRemoteConfigDataSourceImpl(firebaseRemoteConfig = get(), gson = get())
     }

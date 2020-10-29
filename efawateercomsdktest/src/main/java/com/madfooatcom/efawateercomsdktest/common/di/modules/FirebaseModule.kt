@@ -14,7 +14,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 
-val firebaseModule = module {
+internal val firebaseModule = module {
     single {
         val options = FirebaseOptions.Builder()
             .setProjectId(get<Environment>().create().projectId)
@@ -31,7 +31,7 @@ val firebaseModule = module {
     single {
         Firebase.remoteConfig(get()).apply {
             val configSettings = remoteConfigSettings {
-                minimumFetchIntervalInSeconds = FirebaseConstants.REMOTE_CONFIG_CACHE_EXPIRATION
+                minimumFetchIntervalInSeconds = FirebaseConstants.REMOTE_CONFIG_CACHE_EXPIRATION_VALUE
             }
             setConfigSettingsAsync(configSettings)
         }
@@ -42,7 +42,7 @@ val firebaseModule = module {
 //    }
 }
 
-fun makeRemoteConfigDataModule(remoteConfigData: RemoteConfigData) = module {
+internal fun makeRemoteConfigDataModule(remoteConfigData: RemoteConfigData) = module {
     single(override = true) {
         remoteConfigData
     }

@@ -1,9 +1,11 @@
 package com.madfooatcom.efawateercomsdktest.data.entities
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
 
-@Entity
-data class RemoteConfigData(@PrimaryKey val id: Int, val environment: String) {
+internal data class RemoteConfigData(
+
+	@SerializedName("Configuration")
+	val configuration: Configuration? = null
+) {
     lateinit var configurationValue: String
 }

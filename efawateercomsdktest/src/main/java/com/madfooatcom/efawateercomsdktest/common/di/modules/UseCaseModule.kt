@@ -5,7 +5,7 @@ import com.madfooatcom.efawateercomsdktest.data.source.remote.source.FirebaseRem
 import com.madfooatcom.efawateercomsdktest.domain.usecases.GetRemoteConfigUseCase
 import org.koin.dsl.module
 
-val useCaseModule = module {
+internal val useCaseModule = module {
     factory {
         GetRemoteConfigUseCase(remoteConfigRepository = get())
     }

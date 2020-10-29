@@ -14,6 +14,6 @@ enum class Environment {
         override fun create(): BaseEnvironment  = ProductionEnvironment()
     };
 
-    abstract fun create(): BaseEnvironment
+    internal abstract fun create(): BaseEnvironment
 
 }

@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.madfooatcom.efawateercomsdktest">
 
     <application>
-        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".TestActivity" />
+
+        <provider
+            android:name=".common.provider.ApplicationContextProvider"
+            android:authorities="${applicationId}.applicationcontextprovider"
+            android:exported="false" />
+        <provider
+            android:name=".common.provider.ActivityContextProvider"
+            android:authorities="${applicationId}.activitycontextprovider"
+            android:exported="false" />
     </application>
 
 </manifest>

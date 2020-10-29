@@ -2,7 +2,7 @@ package com.madfooatcom.efawateercomsdktest.common.config.environment
 
 import com.madfooatcom.efawateercomsdktest.common.constants.FirebaseConstants
 
-class DevelopmentEnvironment : BaseEnvironment {
+internal class DevelopmentEnvironment : BaseEnvironment {
     override val projectId: String
         get() = FirebaseConstants.Development.projectId
 

@@ -2,7 +2,7 @@ package com.madfooatcom.test.Test
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.madfooatcom.efawateercomsdktest.common.config.paymentgateway.EfawateercomPaymentGateway
+import com.madfooatcom.efawateercomsdktest.common.entrance.Efawateercom
 
 import com.madfooatcom.test.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         launch.setOnClickListener {
-            EfawateercomPaymentGateway.launch(this)
+            Efawateercom.launch()
         }
 
 
