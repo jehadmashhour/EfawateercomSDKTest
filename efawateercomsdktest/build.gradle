@@ -170,14 +170,15 @@ artifacts {
 
 if (android.productFlavors.size() > 0) {
     android.libraryVariants.all { variant ->
+        generateJavadocsJar
+        generateSourcesJar
+
         def bundleTask = tasks["bundle${variant.name.capitalize()}Aar"]
         artifacts {
             archives(bundleTask.archivePath) {
                 classifier variant.name
                 builtBy bundleTask
                 name = project.name
-                generateJavadocsJar
-                generateSourcesJar
             }
 
         }
