@@ -52,7 +52,6 @@ android {
 
     }
 
-    defaultPublishConfig "liveRelease"
 
 
     compileOptions {
