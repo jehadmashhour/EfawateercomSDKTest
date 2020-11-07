@@ -1,7 +1,7 @@
 package com.madfooatcom.efawateercomsdktest.common.di
 
 import com.madfooatcom.efawateercomsdktest.BuildConfig
-import com.madfooatcom.efawateercomsdktest.EfEnvironment
+
 import com.madfooatcom.efawateercomsdktest.common.config.flavor.Flavor
 import com.madfooatcom.efawateercomsdktest.common.di.module.*
 import com.madfooatcom.efawateercomsdktest.common.config.gateway.EfawateercomConfiguration
@@ -16,7 +16,7 @@ internal fun initKoin(
 ) {
     startKoin {
         androidContext(ApplicationContextProvider.applicationContext!!)
-        if (BuildConfig.FLAVOR == Flavor.LOCAL.flavor || BuildConfig.DEBUG) {
+        if ( BuildConfig.DEBUG) {
             androidLogger()
         }
         modules(

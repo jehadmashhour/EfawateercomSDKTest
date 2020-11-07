@@ -1,7 +1,8 @@
 package com.madfooatcom.test
 
 import android.app.Application
-import com.madfooatcom.efawateercomsdktest.EfEnvironment
+import com.madfooatcom.efawateercomsdktest.common.config.environment.EfEnvironment
+
 import com.madfooatcom.efawateercomsdktest.common.config.gateway.EfLanguage
 import com.madfooatcom.efawateercomsdktest.common.config.gateway.EfTheme
 import com.madfooatcom.efawateercomsdktest.common.config.gateway.Efawateercom
