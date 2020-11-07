@@ -173,10 +173,12 @@ if (android.productFlavors.size() > 0) {
         def bundleTask = tasks["bundle${variant.name.capitalize()}Aar"]
         artifacts {
             archives(bundleTask.archivePath) {
-                classifier null
+                classifier variant.name
                 builtBy bundleTask
                 name = project.name
             }
+            archives generateJavadocsJar
+            archives generateSourcesJar
         }
     }
 }
