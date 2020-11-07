@@ -141,6 +141,7 @@ task generateSourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier 'sources'
 }
+
 task generateJavadocs(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath()
@@ -171,9 +172,8 @@ if (android.productFlavors.size() > 0) {
         def bundleTask = tasks["bundle${variant.name.capitalize()}Aar"]
         artifacts {
             archives(bundleTask.archivePath) {
-                classifier variant.name
+                classifier null
                 builtBy bundleTask
-                name = project.name
             }
         }
     }
