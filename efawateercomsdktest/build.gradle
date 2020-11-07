@@ -137,12 +137,21 @@ dependencies {
 
 }
 
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.javaDirectories
+}
+
+artifacts {
+    archives sourcesJar
+}
+
 if (android.productFlavors.size() > 0) {
     android.libraryVariants.all { variant ->
         def bundleTask = tasks["bundle${variant.name.capitalize()}Aar"]
         artifacts {
             archives(bundleTask.archivePath) {
-                classifier variant.name
+                classifier variant.name.capitalize()
                 builtBy bundleTask
                 name = project.name
             }
