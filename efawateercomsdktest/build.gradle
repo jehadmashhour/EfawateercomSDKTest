@@ -176,9 +176,11 @@ if (android.productFlavors.size() > 0) {
                 classifier variant.name
                 builtBy bundleTask
                 name = project.name
+                generateJavadocsJar
+                generateSourcesJar
             }
-            archives generateJavadocsJar
-            archives generateSourcesJar
+
         }
+
     }
 }
