@@ -22,7 +22,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("\\signing\\efawateercomsdk_keystore.jks")
+            storeFile file("D:\\MadfooatcomGit\\EfawateercomSDK\\signing\\efawateercomsdk_keystore.jks")
             storePassword "Test@123"
             keyAlias "efawateercomsdk_keystore"
             keyPassword "Test@123"
