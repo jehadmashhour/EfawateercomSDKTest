@@ -170,21 +170,20 @@ artifacts {
 
 if (android.productFlavors.size() > 0) {
     android.libraryVariants.all { variant ->
+        def task = project.tasks.create "jar${variant.name.capitalize()}", Jar
+        task.description = "Create jar artifact for ${variant.name}"
+        task.dependsOn variant.javaCompile
+        task.from variant.javaCompile.destinationDir
+        task.destinationDir = project.file("${project.buildDir}/outputs/jar")
+        task.archiveName = "${project.name}-${variant.baseName}-${version}.jar"
+        artifacts.add('archives', task);
+
         def bundleTask = tasks["bundle${variant.name.capitalize()}Aar"]
         artifacts {
             archives(bundleTask.archivePath) {
                 classifier variant.name
                 builtBy bundleTask
                 name = project.name
-
-                def task = project.tasks.create "jar${variant.name.capitalize()}", Jar
-                task.description = "Create jar artifact for ${variant.name}"
-                task.dependsOn variant.javaCompile
-                task.from variant.javaCompile.destinationDir
-                task.destinationDir = project.file("${project.buildDir}/outputs/jar")
-                task.archiveName = "${project.name}-${variant.baseName}-${version}.jar"
-                artifacts.add('archives', task);
-
             }
 
         }
