@@ -1,7 +1,6 @@
 package com.madfooatcom.efawateercomsdktest.common.config.gateway
 
-
-import com.madfooatcom.efawateercomsdktest.EfEnvironment
+import com.madfooatcom.efawateercomsdktest.common.config.environment.EfEnvironment
 
 
 class EfawateercomConfiguration private constructor(
