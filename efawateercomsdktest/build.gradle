@@ -52,8 +52,6 @@ android {
 
     }
 
-    // default build flavour
-    defaultPublishConfig "LiveRelease"
 
 
     compileOptions {
@@ -132,15 +130,17 @@ dependencies {
 
 }
 
-if( android.productFlavors.size() > 0 ) {
+if (android.productFlavors.size() > 0) {
     android.libraryVariants.all { variant ->
-        if( variant.name == android.defaultPublishConfig ) {
-            def bundleTask = tasks["bundle${name.capitalize()}"]
-            artifacts {
-                archives(bundleTask.archivePath) {
-                    classifier null
-                    builtBy bundleTask
-                }
+        if (variant.name.toLowerCase().contains("debug")) {
+            return
+        }
+        def bundleTask = tasks["bundle${variant.name.capitalize()}Aar"]
+        artifacts {
+            archives(bundleTask.archivePath) {
+                classifier variant.name.capitalize().replace("Release", "")
+                builtBy bundleTask
+                name = project.name
             }
         }
     }
