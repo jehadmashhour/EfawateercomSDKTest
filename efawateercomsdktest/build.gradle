@@ -152,6 +152,13 @@ task generateJavadocsJar(type: Jar) {
     classifier 'javadoc'
 }
 
+tasks.withType(Javadoc) {
+    failOnError false
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
+
 generateJavadocsJar.dependsOn generateJavadocs
 
 artifacts {
