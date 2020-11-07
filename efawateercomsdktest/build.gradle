@@ -137,13 +137,26 @@ dependencies {
 
 }
 
-task sourcesJar(type: Jar) {
-    classifier = 'sources'
-    from android.sourceSets.main.javaDirectories
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+task generateJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath()
+            .join(File.pathSeparator))
 }
 
+task generateJavadocsJar(type: Jar) {
+    from generateJavadocs.destinationDir
+    classifier 'javadoc'
+}
+
+generateJavadocsJar.dependsOn generateJavadocs
+
 artifacts {
-    archives sourcesJar
+    archives generateJavadocsJar
+    archives generateSourcesJar
 }
 
 if (android.productFlavors.size() > 0) {
@@ -151,7 +164,7 @@ if (android.productFlavors.size() > 0) {
         def bundleTask = tasks["bundle${variant.name.capitalize()}Aar"]
         artifacts {
             archives(bundleTask.archivePath) {
-                classifier variant.name.capitalize()
+                classifier variant.name
                 builtBy bundleTask
                 name = project.name
             }
