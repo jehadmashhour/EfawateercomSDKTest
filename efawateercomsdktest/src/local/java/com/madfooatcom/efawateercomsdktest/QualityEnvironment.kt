@@ -1,14 +1,14 @@
 package com.madfooatcom.efawateercomsdktest.common.config.environment
 
-import com.madfooatcom.efawateercomsdktest.common.constants.FirebaseConstants
+import com.madfooatcom.efawateercomsdktest.LocalConstants
 
 internal class QualityEnvironment : BaseEnvironment {
     override val projectId: String
-        get() = FirebaseConstants.Quality.projectId
+        get() = LocalConstants.Quality.projectId
 
     override val applicationId: String
-        get() = FirebaseConstants.Quality.applicationId
+        get() = LocalConstants.Quality.applicationId
 
     override val apiKey: String
-        get() = FirebaseConstants.Quality.apiKey
+        get() = LocalConstants.Quality.apiKey
 }

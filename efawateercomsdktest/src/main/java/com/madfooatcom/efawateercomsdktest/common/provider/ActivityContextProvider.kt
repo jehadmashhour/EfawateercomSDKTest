@@ -14,10 +14,10 @@ import androidx.annotation.VisibleForTesting
 import com.google.android.gms.common.internal.Preconditions
 
 
-class ActivityContextProvider : ContentProvider() {
+internal class ActivityContextProvider : ContentProvider() {
 
     companion object {
-        lateinit var activityContext: Context
+        var activityContext: Context? = null
 
         @VisibleForTesting
         val EMPTY_APPLICATION_ID_PROVIDER_AUTHORITY =

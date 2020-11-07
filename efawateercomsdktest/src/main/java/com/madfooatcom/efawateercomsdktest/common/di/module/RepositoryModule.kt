@@ -1,4 +1,4 @@
-package com.madfooatcom.efawateercomsdktest.common.di.modules
+package com.madfooatcom.efawateercomsdktest.common.di.module
 
 import com.madfooatcom.efawateercomsdktest.data.repository.RemoteConfigRepositoryImpl
 import com.madfooatcom.efawateercomsdktest.data.source.remote.source.FirebaseRemoteConfigDataSourceImpl

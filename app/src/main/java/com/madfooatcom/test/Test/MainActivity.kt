@@ -1,23 +1,13 @@
 package com.madfooatcom.test.Test
 
-import android.annotation.SuppressLint
-import android.content.Context
-import android.content.pm.PackageInfo
-import android.content.pm.PackageManager
-import android.content.pm.Signature
-import android.os.Build
 import android.os.Bundle
-import android.util.Base64
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.madfooatcom.efawateercomsdktest.BuildConfig
-import com.madfooatcom.efawateercomsdktest.common.entrance.Efawateercom
-import com.madfooatcom.test.BuildConfig.APPLICATION_ID
+import com.madfooatcom.efawateercomsdktest.common.config.gateway.EfPaymentWay
+import com.madfooatcom.efawateercomsdktest.common.config.gateway.Efawateercom
+import com.madfooatcom.efawateercomsdktest.common.config.gateway.PaymentConfiguration
+import com.madfooatcom.efawateercomsdktest.common.config.gateway.EfUserInfo
 import com.madfooatcom.test.R
 import kotlinx.android.synthetic.main.activity_main.*
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
-import kotlin.experimental.and
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,8 +15,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        ///Get Token with amount and currency by rest api
         launch.setOnClickListener {
-            Efawateercom.launch()
+            Efawateercom.launch(
+                PaymentConfiguration.Builder(
+                    "3534523523",
+                    EfUserInfo.Builder("ashf", "auisf")
+                        .userName("asgf")
+                        .userPhone("oiqwe")
+                        .userEmail("qr")
+                        .build()
+                )
+                    .paymentWay(EfPaymentWay.CONTINUOUS)
+                    .correlationId("352435")
+                    .build()
+            )
         }
 
 

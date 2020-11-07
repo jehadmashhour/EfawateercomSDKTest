@@ -37,38 +37,36 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    productFlavors {
+
+        live {
+
+        }
+
+        local {
+
+        }
+
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
 
-    productFlavors {
-        development {
-            applicationIdSuffix ".development"
-        }
-
-        quality {
-            applicationIdSuffix ".quality"
-        }
-
-        sandbox {
-            applicationIdSuffix ".sandbox"
-        }
-
-        production {
-        }
-    }
 }
 
 dependencies {
     testImplementation 'junit:junit:4.13'
-    androidTestImplementation ('androidx.test.ext:junit:1.1.2'){
+    androidTestImplementation('androidx.test.ext:junit:1.1.2') {
         exclude group: 'androidx.annotation'
         exclude group: 'androidx.lifecycle'
         exclude group: 'junit'
     }
-    androidTestImplementation ('androidx.test.espresso:espresso-core:3.3.0'){
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.3.0') {
         exclude group: 'androidx.annotation'
         exclude group: 'com.google.code.findbugs'
         exclude group: 'junit'

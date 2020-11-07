@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.madfooatcom.efawateercomsdktest.common.di.modules
+package com.madfooatcom.efawateercomsdktest.common.di.module
 
 import com.google.gson.Gson
 import okhttp3.OkHttpClient

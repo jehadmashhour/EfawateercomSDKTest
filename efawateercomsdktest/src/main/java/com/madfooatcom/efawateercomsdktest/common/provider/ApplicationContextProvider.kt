@@ -15,10 +15,10 @@ import com.google.android.gms.common.internal.Preconditions
 
 
 
-class ApplicationContextProvider : ContentProvider() {
+internal class ApplicationContextProvider : ContentProvider() {
 
     companion object {
-        lateinit var applicationContext: Context
+         var applicationContext: Context? = null
 
         @VisibleForTesting
         val EMPTY_APPLICATION_ID_PROVIDER_AUTHORITY =

@@ -16,6 +16,8 @@ android {
         versionCode 1
         versionName "1.0"
 
+        flavorDimensions 'default'
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -38,6 +40,19 @@ android {
         }
     }
 
+
+
+    productFlavors {
+        live {
+
+        }
+
+        local {
+
+        }
+
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -47,7 +62,7 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation('androidx.test.ext:junit:1.1.2') {
         exclude group: 'androidx.annotation'
@@ -65,7 +80,7 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     api 'androidx.core:core-ktx:1.3.2'
     api 'androidx.appcompat:appcompat:1.2.0'
-    api 'androidx.constraintlayout:constraintlayout:2.0.2'
+    api 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     // Koin AndroidX Scope features
     api "org.koin:koin-androidx-scope:$koin_version"
@@ -87,16 +102,17 @@ dependencies {
     //retrofit
     api "com.squareup.retrofit2:converter-gson:2.9.0"
     api "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
+    api "io.reactivex.rxjava2:rxkotlin:2.4.0"
 
     //firebase
-    api('com.google.firebase:firebase-config-ktx:19.2.0') {
+    api('com.google.firebase:firebase-config-ktx:20.0.0') {
         exclude group: 'androidx.collection'
         exclude group: 'androidx.core'
         exclude group: 'androidx.fragment'
         exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
     }
 
-    api 'com.google.firebase:firebase-firestore-ktx:21.7.1'
+    api 'com.google.firebase:firebase-firestore-ktx:22.0.0'
 //    api 'com.google.firebase:firebase-crashlytics-ktx'
 
     //Room

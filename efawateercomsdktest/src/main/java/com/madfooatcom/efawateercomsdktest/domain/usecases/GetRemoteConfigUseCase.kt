@@ -1,6 +1,6 @@
 package com.madfooatcom.efawateercomsdktest.domain.usecases
 
-import com.madfooatcom.efawateercomsdktest.common.constants.FirebaseConstants
+import com.madfooatcom.efawateercomsdktest.common.constant.FirebaseConstants
 import com.madfooatcom.efawateercomsdktest.data.entities.RemoteConfigData
 import com.madfooatcom.efawateercomsdktest.domain.repository.RemoteConfigRepository
 import com.madfooatcom.efawateercomsdktest.domain.usecases.base.UseCase
