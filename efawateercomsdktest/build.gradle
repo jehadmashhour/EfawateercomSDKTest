@@ -52,6 +52,7 @@ android {
 
     }
 
+    defaultPublishConfig "liveRelease"
 
 
     compileOptions {
@@ -138,13 +139,10 @@ dependencies {
 
 if (android.productFlavors.size() > 0) {
     android.libraryVariants.all { variant ->
-        if (variant.name.toLowerCase().contains("debug")) {
-            return
-        }
         def bundleTask = tasks["bundle${variant.name.capitalize()}Aar"]
         artifacts {
             archives(bundleTask.archivePath) {
-                classifier variant.name.capitalize().replace("Release", "")
+                classifier variant.name
                 builtBy bundleTask
                 name = project.name
             }
