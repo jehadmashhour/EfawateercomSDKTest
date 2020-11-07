@@ -14,7 +14,7 @@ class MyApplication : Application() {
         super.onCreate()
 
         Efawateercom.init(
-            EfawateercomConfiguration.Builder(EfEnvironment.DEVELOPMENT)
+            EfawateercomConfiguration.Builder(EfEnvironment.PRODUCTION)
                 .language(EfLanguage.ENGLISH)
                 .theme(EfTheme.LIGHT)
                 .build()
